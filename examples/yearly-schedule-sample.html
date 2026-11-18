@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>一学年三防安全活动年度排期表（示例档案 · 排期模式）</title>
+<style>
+:root{
+  --wf-red:#9B1C2C; --wf-red-deep:#7A1420; --wf-gold:#C9A227; --wf-gold-deep:#8A6D1A;
+  --wf-paper:#FAF6EE; --wf-ink:#2B2620; --wf-gray:#6B5F52; --line:#ddd3c4;
+  --todo:#fff3c4;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:#eee9df; color:var(--wf-ink);
+  font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC","Source Han Sans SC",sans-serif;
+  font-size:15px; line-height:1.75; -webkit-font-smoothing:antialiased;
+}
+.toolbar{max-width:210mm;margin:18px auto 0;text-align:right}
+.toolbar button{
+  font:inherit;font-size:14px;padding:8px 18px;border-radius:6px;border:1px solid var(--line);
+  background:#fff;color:var(--wf-ink);cursor:pointer
+}
+.toolbar button:hover{border-color:var(--wf-red);color:var(--wf-red)}
+.sheet{
+  max-width:210mm;margin:14px auto 40px;background:#fff;
+  padding:16mm 15mm 18mm;box-shadow:0 6px 24px rgba(60,45,25,.12);border-radius:2px;
+  border-top:4px solid var(--wf-red);
+}
+.eyebrow{font-size:12.5px;letter-spacing:.18em;color:var(--wf-gray);margin-bottom:6px}
+h1{font-family:Georgia,"Noto Serif SC","Source Han Serif SC",serif;font-size:26px;line-height:1.35;margin:0 0 10px;padding-bottom:10px;border-bottom:2px solid var(--wf-gold)}
+.meta{display:flex;flex-wrap:wrap;gap:9px 24px;margin:0 0 4px;padding:0;font-size:14px;color:var(--wf-ink)}
+.meta span{display:inline-flex;align-items:baseline}
+.meta span strong{color:var(--wf-gray);font-weight:500;margin-right:7px;flex:0 0 auto}
+section{margin-top:22px}
+h2{font-family:Georgia,"Noto Serif SC","Source Han Serif SC",serif;font-size:17px;margin:0 0 12px;display:flex;align-items:center;gap:9px;color:var(--wf-red-deep)}
+h2::before{content:"";width:4px;height:16px;background:var(--wf-gold);border-radius:2px;display:inline-block}
+ul{margin:0;padding-left:0;list-style:none}
+ul li{position:relative;padding-left:17px;margin:5px 0}
+ul li::before{content:"";position:absolute;left:2px;top:11px;width:5px;height:5px;border-radius:50%;background:var(--wf-gold)}
+table{width:100%;border-collapse:collapse;font-size:14px;break-inside:avoid;page-break-inside:avoid}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th:first-child,td:first-child{white-space:nowrap}
+th{background:var(--wf-paper);font-weight:600;color:var(--wf-red-deep)}
+tbody tr:nth-child(even){background:#fcfaf5}
+.muted{color:var(--wf-gray)}
+.todo{background:var(--todo);border-radius:3px;padding:0 2px}
+.figure{margin:10px 0;break-inside:avoid;page-break-inside:avoid}
+.figure img{max-width:100%;border:1px solid var(--line);border-radius:4px;display:block}
+.figure figcaption{font-size:13px;color:var(--wf-gray);margin-top:4px}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--line);font-size:12.5px;color:var(--wf-gray);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+@media print{
+  @page{size:A4;margin:12mm 12mm 12mm}
+  body{background:#fff;font-size:13.5px;line-height:1.62}
+  .toolbar{display:none}
+  .sheet{box-shadow:none;margin:0;padding:0;max-width:none;border-top-width:3px}
+  .eyebrow{font-size:11px;margin-bottom:3px}
+  h1{font-size:21px;margin-bottom:7px;padding-bottom:7px}
+  .meta{font-size:12.5px;gap:5px 16px}
+  section{margin-top:13px}
+  h2{font-size:15px;margin-bottom:7px}
+  table{font-size:12.5px}
+  th,td{padding:5px 8px}
+  footer{margin-top:14px;padding-top:7px}
+}
+@media (max-width:720px){
+  .sheet{padding:20px 16px;margin:0;border-radius:0}
+  h1{font-size:21px}
+  .meta{font-size:13px}
+}
+</style>
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">打印 / 存 PDF</button></div>
+<main class="sheet">
+  <header>
+    <div class="eyebrow">幼儿园安全活动工作台 · 方案稿（内部初稿）</div>
+    <h1>一学年三防安全活动年度排期表（示例档案 · 排期模式）</h1>
+    <div class="meta"></div>
+  </header>
+  <section><h2>排期背景与适用范围</h2><ul><li>适用学年：<span class="todo">【待核实：____ 学年】</span></li><li>覆盖分支：防火、防震、防拐三类；防溺水、防踩踏、交通安全等其他主题不在本表内。</li><li>安排口径：先对年度节点定场次，再按各场条件单独采集背景、场地、人数与外联状态；旧场数字、路线、联系人不沿用到新场。</li></ul></section><section><h2>年度轮换安排表</h2><table><thead><tr><th>序号</th><th>时段</th><th>分支</th><th>时间窗口参照</th><th>本场侧重</th><th>形式组合</th><th>负责人</th><th>状态</th></tr></thead><tbody><tr><td>1</td><td>秋季（11 月消防宣传月前后）</td><td>防火</td><td>全国消防宣传月／119 消防日</td><td>宣教认知＋疏散演练；成人器材实操另列时段</td><td>宣教、疏散演练、成人专项；家园宣传；消防站外联拟接洽，尚未确认，列为备选</td><td>后勤 / 安全负责人（姓名待核定）</td><td>待排</td></tr><tr><td>2</td><td>春季（安全教育日前后）</td><td>防震</td><td>3 月最后一个周一前后</td><td>避险动作＋震后疏散演练</td><td>避险认知、避险疏散演练、家园提示</td><td>各班教师配合</td><td>待排</td></tr><tr><td>3</td><td>学期内其余时段</td><td>防拐</td><td>开学季／长假前后</td><td>情景认知与角色扮演</td><td>情景游戏、口诀巩固、家园配合；不组织撤离演练、无器材实操</td><td>各班教师</td><td>待排</td></tr><tr><td>4</td><td>按需重复</td><td>防火 / 防震</td><td>按园所预案与属地要求</td><td>复盘巩固</td><td>再组织一次疏散演练或专题宣教；对照上一场改进项核对落地</td><td>后勤 / 安全负责人</td><td>视条件安排</td></tr></tbody></table></section><section><h2>场间衔接安排</h2><ul><li>第 1 场防火演练结束后，总结中的通道秩序、引导员到位等问题，带入第 2 场防震演练前置核对。</li><li>第 2 场避险疏散中幼儿动作掌握情况，作为第 3 场防拐情景活动的适龄节奏参照。</li><li>每场活动结束后另出独立总结稿；总结留痕清单与改进项回流到本排期表，作为下一场安排依据。</li><li>外联单位是否到场，每场单独确认；上一场接洽过的单位不默认延续到下一场。</li></ul></section><section><h2>留痕与归档对照</h2><table><thead><tr><th>场次</th><th>归档材料（各场单独形成）</th></tr></thead><tbody><tr><td>防火场</td><td>方案、通知、教案、签到清点、过程照片、成人专项记录、家园材料、总结稿</td></tr><tr><td>防震场</td><td>方案、通知、教案、签到清点、过程照片、总结稿</td></tr><tr><td>防拐场</td><td>方案、情景活动记录、家园提示、总结稿</td></tr></tbody></table></section><section><h2>附：待核实项</h2><ul><li><span class="todo">【待核实：具体学年与各场日期，以园所校历与当年属地通知为准】</span></li><li><span class="todo">【待核实：各场负责人姓名、班级数与场地安排】</span></li><li><span class="todo">【待核实：消防站 / 民警 / 社区外联是否具备接洽条件，确认前不写成既定到场安排】</span></li><li><span class="todo">【待核实：属地对演练频次、总结报送时限的额外要求】</span></li></ul></section>
+  <footer>
+    <span>内部初稿 · 人工核定后再上报或对外</span>
+    <span>打印建议：A4 纵向，页边距选"默认"</span>
+  </footer>
+</main>
+</body>
+</html>
