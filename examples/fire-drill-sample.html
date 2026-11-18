@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>疏散演练专场方案（示例档案）</title>
+<style>
+:root{
+  --wf-red:#9B1C2C; --wf-red-deep:#7A1420; --wf-gold:#C9A227; --wf-gold-deep:#8A6D1A;
+  --wf-paper:#FAF6EE; --wf-ink:#2B2620; --wf-gray:#6B5F52; --line:#ddd3c4;
+  --todo:#fff3c4;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:#eee9df; color:var(--wf-ink);
+  font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC","Source Han Sans SC",sans-serif;
+  font-size:15px; line-height:1.75; -webkit-font-smoothing:antialiased;
+}
+.toolbar{max-width:210mm;margin:18px auto 0;text-align:right}
+.toolbar button{
+  font:inherit;font-size:14px;padding:8px 18px;border-radius:6px;border:1px solid var(--line);
+  background:#fff;color:var(--wf-ink);cursor:pointer
+}
+.toolbar button:hover{border-color:var(--wf-red);color:var(--wf-red)}
+.sheet{
+  max-width:210mm;margin:14px auto 40px;background:#fff;
+  padding:16mm 15mm 18mm;box-shadow:0 6px 24px rgba(60,45,25,.12);border-radius:2px;
+  border-top:4px solid var(--wf-red);
+}
+.eyebrow{font-size:12.5px;letter-spacing:.18em;color:var(--wf-gray);margin-bottom:6px}
+h1{font-family:Georgia,"Noto Serif SC","Source Han Serif SC",serif;font-size:26px;line-height:1.35;margin:0 0 10px;padding-bottom:10px;border-bottom:2px solid var(--wf-gold)}
+.meta{display:flex;flex-wrap:wrap;gap:9px 24px;margin:0 0 4px;padding:0;font-size:14px;color:var(--wf-ink)}
+.meta span{display:inline-flex;align-items:baseline}
+.meta span strong{color:var(--wf-gray);font-weight:500;margin-right:7px;flex:0 0 auto}
+section{margin-top:22px}
+h2{font-family:Georgia,"Noto Serif SC","Source Han Serif SC",serif;font-size:17px;margin:0 0 12px;display:flex;align-items:center;gap:9px;color:var(--wf-red-deep)}
+h2::before{content:"";width:4px;height:16px;background:var(--wf-gold);border-radius:2px;display:inline-block}
+ul{margin:0;padding-left:0;list-style:none}
+ul li{position:relative;padding-left:17px;margin:5px 0}
+ul li::before{content:"";position:absolute;left:2px;top:11px;width:5px;height:5px;border-radius:50%;background:var(--wf-gold)}
+table{width:100%;border-collapse:collapse;font-size:14px;break-inside:avoid;page-break-inside:avoid}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th:first-child,td:first-child{white-space:nowrap}
+th{background:var(--wf-paper);font-weight:600;color:var(--wf-red-deep)}
+tbody tr:nth-child(even){background:#fcfaf5}
+.muted{color:var(--wf-gray)}
+.todo{background:var(--todo);border-radius:3px;padding:0 2px}
+.figure{margin:10px 0;break-inside:avoid;page-break-inside:avoid}
+.figure img{max-width:100%;border:1px solid var(--line);border-radius:4px;display:block}
+.figure figcaption{font-size:13px;color:var(--wf-gray);margin-top:4px}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--line);font-size:12.5px;color:var(--wf-gray);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+@media print{
+  @page{size:A4;margin:12mm 12mm 12mm}
+  body{background:#fff;font-size:13.5px;line-height:1.62}
+  .toolbar{display:none}
+  .sheet{box-shadow:none;margin:0;padding:0;max-width:none;border-top-width:3px}
+  .eyebrow{font-size:11px;margin-bottom:3px}
+  h1{font-size:21px;margin-bottom:7px;padding-bottom:7px}
+  .meta{font-size:12.5px;gap:5px 16px}
+  section{margin-top:13px}
+  h2{font-size:15px;margin-bottom:7px}
+  table{font-size:12.5px}
+  th,td{padding:5px 8px}
+  footer{margin-top:14px;padding-top:7px}
+}
+@media (max-width:720px){
+  .sheet{padding:20px 16px;margin:0;border-radius:0}
+  h1{font-size:21px}
+  .meta{font-size:13px}
+}
+</style>
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">打印 / 存 PDF</button></div>
+<main class="sheet">
+  <header>
+    <div class="eyebrow">幼儿园安全活动工作台 · 方案稿（内部初稿）</div>
+    <h1>疏散演练专场方案（示例档案）</h1>
+    <div class="meta"><span><strong>时间窗口</strong>11·9 消防日</span><span><strong>主办 / 负责人</strong>后勤 / 安全负责人（岗位代称，姓名待核定）</span><span><strong>参与对象</strong>全体幼儿、教职工、安保 / 志愿消防力量</span><span><strong>本场侧重</strong>疏散演练为主</span></div>
+  </header>
+  <section><h2>背景与目标</h2><ul><li><strong>时间窗口 / 主题</strong>：11·9 消防日；当年宣传月主题<span class="todo">【待核实：以当年官方通知为准，不沿用往年】</span>。</li><li><strong>参与对象</strong>：全园幼儿跟随教师参与疏散；教职工、安保、志愿力量承担引导、清点与器材保障；本场不安排外联参观。</li><li><strong>本场目标</strong>：</li><li>完成一次全员疏散演练，幼儿听懂警报、按路线撤离到集合点；</li><li>教职工熟悉报警、引导、清点分工，安保力量就位；</li><li>留存演练通知、签到、清点、照片与小结，备检查。</li></ul></section><section><h2>活动板块安排</h2><table><thead><tr><th>板块</th><th>内容</th><th>对象</th><th>时间 / 时长</th><th>负责人</th><th>物料</th><th>留痕材料</th></tr></thead><tbody><tr><td>宣教铺垫</td><td>演练前一日班级谈话：认识警报信号、撤离要领、不推挤</td><td>各班幼儿</td><td>演练前一日晨间</td><td>各班班主任</td><td>绘本、标志图卡</td><td>谈话记录、照片</td></tr><tr><td>疏散演练</td><td>警报 → 带队撤离 → 集合清点 → 现场小结</td><td>全体幼儿＋教职工</td><td>11 月 9 日上午（草稿，日期待排期）约 20 分钟</td><td>总指挥：副园长</td><td>广播 / 警报、签到表、集合点标识</td><td>演练方案、签到、照片、清点记录、小结</td></tr><tr><td>器材演示</td><td>成人器材要领观摩（本场不动手实操，动手训练另排专场）</td><td>教职工、安保、志愿力量</td><td>演练后简短观摩</td><td>器材保障：安保主任</td><td>训练罐、消火栓、面具（数量<span class="todo">【待核实】</span>）</td><td>观摩记录、照片</td></tr><tr><td>家园宣传</td><td>群内告知演练安排与当日着装提醒</td><td>在读家庭</td><td>演练前一日</td><td>行政宣传对接人</td><td>群通知模板</td><td>群截图</td></tr></tbody></table></section><section><h2>演练日流程（草稿钟点，待排期核定）</h2><table><thead><tr><th>时段</th><th>环节</th><th>负责人</th><th>要点</th></tr></thead><tbody><tr><td>9:20—9:25</td><td>演练前动员：信号、路线、集合点、防踩踏要求</td><td>各班班主任</td><td>幼儿知道"跟着老师、弯腰捂口鼻"，不喧哗不推挤</td></tr><tr><td>9:25—9:32</td><td>警报触发，按预定路线撤离</td><td>楼层引导员：配班老师</td><td>教师一前一后带队，清点员随班</td></tr><tr><td>9:32—9:40</td><td>集合点清点人数，报总指挥</td><td>各班清点员：班主任</td><td>与名册核对，缺员立即上报</td></tr><tr><td>9:40—9:45</td><td>现场小结：顺畅点与改进点</td><td>总指挥：副园长</td><td>只记事实与改进点，不做评价性结论</td></tr><tr><td>9:45—9:50</td><td>有序带回教室</td><td>各班班主任</td><td>—</td></tr></tbody></table></section><section><h2>分工与物料</h2><ul><li><strong>分工</strong>：总指挥：副园长；楼层 / 通道引导员：配班老师；班级清点员：班主任；医务 / 联络：保健医；器材保障：安保主任；拍照留痕：行政（各岗位姓名待核定）。</li><li><strong>物料清单</strong>：广播 / 警报、疏散路线图、集合点标识；现有灭火器、消火栓、防烟面具；训练罐<span class="todo">【待核实是否具备、数量待核】</span>；签到表、班级名册、拍照设备、群通知模板。</li></ul></section><section><h2>量力校验</h2><table><thead><tr><th>维度</th><th>状态</th><th>缺口处置</th></tr></thead><tbody><tr><td>人手</td><td>岗位已排定，具体姓名待核定</td><td>名单凑不齐先分批演练；角色不能空</td></tr><tr><td>时间</td><td>草稿时段，日期待排期</td><td>倒排：通知 → 班级谈话 → 路线器材检查 → 演练</td></tr><tr><td>物料</td><td>待核</td><td>先盘点现有器材；训练罐不具备则本场只做要领观摩</td></tr><tr><td>场地</td><td>待核</td><td>路线与集合点容量待现场走查，不满足分批撤离</td></tr><tr><td>通知渠道</td><td>现成</td><td>园内通知、家园群发布；通知稿人工复核后发</td></tr></tbody></table></section><section><h2>安全注意事项与红线</h2><ul><li><strong>幼儿不参与明火与器材实操</strong>：本场幼儿只跟随疏散与观摩；器材动手训练仅限成人，另排专场。</li><li><strong>防踩踏优先</strong>：通道分流向，不在楼梯口停留或围观器材演示。</li><li><strong>条件以现场为准</strong>：器材完好性、通道畅通、值守配置以现场核查和持证要求为准；人数、器材数量、场地条件<span class="todo">【待核实】</span>，不预设。</li><li><strong>不写结论性表述</strong>：不出现"零隐患""全部达标""保证不出事""百分百安全"；问题进整改闭环。</li><li><strong>方案不替代制度文件</strong>：日常检查巡查、应急预案、设施维护按园所既有制度和属地要求执行。</li></ul></section><section><h2>迎检留痕清单</h2><table><thead><tr><th>序号</th><th>材料</th><th>状态</th></tr></thead><tbody><tr><td>1</td><td>活动方案（定稿、签字 / 盖章版）</td><td>本稿待核定</td></tr><tr><td>2</td><td>演练前班级谈话记录</td><td>【待补】</td></tr><tr><td>3</td><td>演练签到表、人数清点记录</td><td>【待补】</td></tr><tr><td>4</td><td>演练照片（动员、撤离、集合、小结）</td><td>【待补】</td></tr><tr><td>5</td><td>器材观摩记录</td><td>【待补】</td></tr><tr><td>6</td><td>家园群通知截图</td><td>【待补】</td></tr><tr><td>7</td><td>演练小结</td><td>【待补】</td></tr></tbody></table></section><section><h2>待核定 / 待核实项</h2><ul><li>当年宣传月主题、属地教育 / 消防部门通知要求与报送时限<span class="todo">【待核实：政策】</span>；</li><li>器材数量与完好性、训练罐是否具备<span class="todo">【待核实：现场盘点】</span>；</li><li>疏散路线实测、集合点容量、值守人员配置<span class="todo">【待核实：现场盘点】</span>；</li><li>参演总人数、各班名单、各岗位人员姓名<span class="todo">【待核实：现场名册】</span>；</li><li>演练最终日期与时段。</li></ul></section>
+  <footer>
+    <span>内部初稿 · 人工核定后再上报或对外</span>
+    <span>打印建议：A4 纵向，页边距选"默认"</span>
+  </footer>
+</main>
+</body>
+</html>
