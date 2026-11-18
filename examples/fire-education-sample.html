@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>宣教认知专场方案（示例档案）</title>
+<style>
+:root{
+  --wf-red:#9B1C2C; --wf-red-deep:#7A1420; --wf-gold:#C9A227; --wf-gold-deep:#8A6D1A;
+  --wf-paper:#FAF6EE; --wf-ink:#2B2620; --wf-gray:#6B5F52; --line:#ddd3c4;
+  --todo:#fff3c4;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:#eee9df; color:var(--wf-ink);
+  font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC","Source Han Sans SC",sans-serif;
+  font-size:15px; line-height:1.75; -webkit-font-smoothing:antialiased;
+}
+.toolbar{max-width:210mm;margin:18px auto 0;text-align:right}
+.toolbar button{
+  font:inherit;font-size:14px;padding:8px 18px;border-radius:6px;border:1px solid var(--line);
+  background:#fff;color:var(--wf-ink);cursor:pointer
+}
+.toolbar button:hover{border-color:var(--wf-red);color:var(--wf-red)}
+.sheet{
+  max-width:210mm;margin:14px auto 40px;background:#fff;
+  padding:16mm 15mm 18mm;box-shadow:0 6px 24px rgba(60,45,25,.12);border-radius:2px;
+  border-top:4px solid var(--wf-red);
+}
+.eyebrow{font-size:12.5px;letter-spacing:.18em;color:var(--wf-gray);margin-bottom:6px}
+h1{font-family:Georgia,"Noto Serif SC","Source Han Serif SC",serif;font-size:26px;line-height:1.35;margin:0 0 10px;padding-bottom:10px;border-bottom:2px solid var(--wf-gold)}
+.meta{display:flex;flex-wrap:wrap;gap:9px 24px;margin:0 0 4px;padding:0;font-size:14px;color:var(--wf-ink)}
+.meta span{display:inline-flex;align-items:baseline}
+.meta span strong{color:var(--wf-gray);font-weight:500;margin-right:7px;flex:0 0 auto}
+section{margin-top:22px}
+h2{font-family:Georgia,"Noto Serif SC","Source Han Serif SC",serif;font-size:17px;margin:0 0 12px;display:flex;align-items:center;gap:9px;color:var(--wf-red-deep)}
+h2::before{content:"";width:4px;height:16px;background:var(--wf-gold);border-radius:2px;display:inline-block}
+ul{margin:0;padding-left:0;list-style:none}
+ul li{position:relative;padding-left:17px;margin:5px 0}
+ul li::before{content:"";position:absolute;left:2px;top:11px;width:5px;height:5px;border-radius:50%;background:var(--wf-gold)}
+table{width:100%;border-collapse:collapse;font-size:14px;break-inside:avoid;page-break-inside:avoid}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th:first-child,td:first-child{white-space:nowrap}
+th{background:var(--wf-paper);font-weight:600;color:var(--wf-red-deep)}
+tbody tr:nth-child(even){background:#fcfaf5}
+.muted{color:var(--wf-gray)}
+.todo{background:var(--todo);border-radius:3px;padding:0 2px}
+.figure{margin:10px 0;break-inside:avoid;page-break-inside:avoid}
+.figure img{max-width:100%;border:1px solid var(--line);border-radius:4px;display:block}
+.figure figcaption{font-size:13px;color:var(--wf-gray);margin-top:4px}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--line);font-size:12.5px;color:var(--wf-gray);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+@media print{
+  @page{size:A4;margin:12mm 12mm 12mm}
+  body{background:#fff;font-size:13.5px;line-height:1.62}
+  .toolbar{display:none}
+  .sheet{box-shadow:none;margin:0;padding:0;max-width:none;border-top-width:3px}
+  .eyebrow{font-size:11px;margin-bottom:3px}
+  h1{font-size:21px;margin-bottom:7px;padding-bottom:7px}
+  .meta{font-size:12.5px;gap:5px 16px}
+  section{margin-top:13px}
+  h2{font-size:15px;margin-bottom:7px}
+  table{font-size:12.5px}
+  th,td{padding:5px 8px}
+  footer{margin-top:14px;padding-top:7px}
+}
+@media (max-width:720px){
+  .sheet{padding:20px 16px;margin:0;border-radius:0}
+  h1{font-size:21px}
+  .meta{font-size:13px}
+}
+</style>
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">打印 / 存 PDF</button></div>
+<main class="sheet">
+  <header>
+    <div class="eyebrow">幼儿园安全活动工作台 · 方案稿（内部初稿）</div>
+    <h1>宣教认知专场方案（示例档案）</h1>
+    <div class="meta"><span><strong>时间窗口</strong>11 月消防宣传月</span><span><strong>主办 / 负责人</strong>后勤 / 安全负责人（岗位代称，姓名待核定）</span><span><strong>参与对象</strong>全园幼儿、各班教师、在读家庭</span><span><strong>本场侧重</strong>宣教认知为主（本场不组织疏散演练与成人器材实操）</span></div>
+  </header>
+  <section><h2>背景与目标</h2><ul><li><strong>时间窗口 / 主题</strong>：11 月消防宣传月；当年宣传月主题<span class="todo">【待核实：以当年官方通知为准，不沿用往年】</span>。</li><li><strong>参与对象</strong>：幼儿在班级与全园活动中参与认知；家庭通过家园渠道配合；本场不含演练、实操与外联参观环节。</li><li><strong>本场目标</strong>：</li><li>幼儿认识火灾危险、火警电话 119、常见消防标志与逃生信号；</li><li>各班完成一次主题活动，留教案与照片；</li><li>家庭配合完成亲子小任务（画家庭逃生路线），形成家园宣传留痕。</li></ul></section><section><h2>活动板块安排</h2><table><thead><tr><th>板块</th><th>内容</th><th>对象</th><th>时间 / 时长</th><th>负责人</th><th>物料</th><th>留痕材料</th></tr></thead><tbody><tr><td>班级主题活动</td><td>绘本讲述、儿歌、动画、标志图卡辨认、逃生信号谈话</td><td>各班幼儿</td><td>宣传月内每班 1 次，约 20—30 分钟</td><td>各班班主任</td><td>绘本、动画、图卡</td><td>教案、课堂照片</td></tr><tr><td>全园认知角</td><td>消防标志、常见器材图片展板（只看图片，不碰真实器材）</td><td>全园幼儿分批次</td><td>宣传月内一周</td><td>后勤协助布置</td><td>展板、图卡（数量<span class="todo">【待核实】</span>）</td><td>布置照片</td></tr><tr><td>家园宣传</td><td>群安全提示、亲子任务：和家长一起画家庭逃生路线</td><td>在读家庭</td><td>宣传月内</td><td>行政宣传对接人</td><td>群通知模板、任务卡</td><td>群截图、亲子作品</td></tr></tbody></table></section><section><h2>当日活动流程（班级场次，草稿时段待排期）</h2><table><thead><tr><th>时段</th><th>环节</th><th>负责人</th><th>要点</th></tr></thead><tbody><tr><td>0—5'</td><td>导入：提问"着火了怎么办"，引出话题</td><td>各班班主任</td><td>不渲染恐慌，用故事和画面引导</td></tr><tr><td>5—20'</td><td>绘本 / 动画与图卡辨认：119、安全出口、禁止烟火等标志</td><td>各班班主任</td><td>幼儿能指认常见标志即可，不要求背诵</td></tr><tr><td>20—25'</td><td>谈话：遇到警报怎么做、不玩火、不躲进柜子</td><td>各班班主任</td><td>与班级日常疏散要求衔接</td></tr><tr><td>25—30'</td><td>小结与作品：完成亲子任务说明</td><td>各班班主任</td><td>任务卡带回家，家长陪同完成</td></tr></tbody></table></section><section><h2>分工与物料</h2><ul><li><strong>分工</strong>：活动统筹：后勤 / 安全负责人；班级执行：各班班主任；展板布置：后勤协助；宣传对接：行政（各岗位姓名待核定）。</li><li><strong>物料清单</strong>：消防绘本、动画、标志图卡、展板；任务卡与群通知模板；图卡 / 展板数量<span class="todo">【待核实】</span>；不安排真实器材上手操作。</li></ul></section><section><h2>量力校验</h2><table><thead><tr><th>维度</th><th>状态</th><th>缺口处置</th></tr></thead><tbody><tr><td>人手</td><td>岗位已排定，具体姓名待核定</td><td>班主任为主，后勤协助布置</td></tr><tr><td>时间</td><td>草稿时段，日期待排期</td><td>结合班级课表安排，不挤占午休</td></tr><tr><td>物料</td><td>待核</td><td>图卡展板先盘点现有；不足再补充，不编数量</td></tr><tr><td>场地</td><td>教室与园内认知角</td><td>不依赖户外集合场地</td></tr><tr><td>通知渠道</td><td>现成</td><td>园内通知、家园群发布；通知稿人工复核后发</td></tr></tbody></table></section><section><h2>安全注意事项与红线</h2><ul><li><strong>幼儿不参与明火与器材实操</strong>：本场只做认知与观摩；真实器材、灭火演练不在本场安排。</li><li><strong>内容适龄</strong>：不用灾难画面或故事渲染恐慌；以儿歌、绘本、图卡为主，符合 3—6 岁认知特点。</li><li><strong>条件以现场为准</strong>：图卡、展板数量与完好性以现场盘点为准；人数、物料条件<span class="todo">【待核实】</span>，不预设。</li><li><strong>不写结论性表述</strong>：不出现"零隐患""全部达标""保证不出事"；本场是教育活动，不做安全结论。</li><li><strong>方案不替代制度文件</strong>：疏散演练、应急预案、设施维护按园所既有制度和属地要求执行；演练另行安排。</li></ul></section><section><h2>迎检留痕清单</h2><table><thead><tr><th>序号</th><th>材料</th><th>状态</th></tr></thead><tbody><tr><td>1</td><td>活动方案（定稿、签字 / 盖章版）</td><td>本稿待核定</td></tr><tr><td>2</td><td>班级教案</td><td>【待补】</td></tr><tr><td>3</td><td>课堂照片、认知角照片</td><td>【待补】</td></tr><tr><td>4</td><td>亲子任务作品</td><td>【待补】</td></tr><tr><td>5</td><td>家园群通知截图</td><td>【待补】</td></tr><tr><td>6</td><td>活动小结</td><td>【待补】</td></tr></tbody></table></section><section><h2>待核定 / 待核实项</h2><ul><li>当年宣传月主题、属地教育 / 消防部门通知要求<span class="todo">【待核实：政策】</span>；</li><li>图卡、展板数量与完好性<span class="todo">【待核实：现场盘点】</span>；</li><li>各班参与人数、各岗位人员姓名<span class="todo">【待核实：现场名册】</span>；</li><li>活动最终日期与各班场次时段。</li></ul></section>
+  <footer>
+    <span>内部初稿 · 人工核定后再上报或对外</span>
+    <span>打印建议：A4 纵向，页边距选"默认"</span>
+  </footer>
+</main>
+</body>
+</html>
