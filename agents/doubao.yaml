@@ -1,0 +1,7 @@
+interface:
+  display_name: "园所三防安全活动工作台"
+  short_description: "分步填空产出防火/防震/防拐活动方案与活动总结；幼儿只认知观摩，成人练器材"
+  default_prompt: "使用 $kindergarten-safety-activity-workbench 帮我出一份幼儿园安全活动方案；活动结束后也可用它整理活动总结留档小结"
+
+policy:
+  allow_implicit_invocation: true
