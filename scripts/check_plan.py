@@ -58,7 +58,7 @@ KID_OPERATE_PATTERNS = [
 
 NEGATIVE_HINTS = ["不参与", "不碰", "只观摩", "不操作", "不递", "不在", "仅限",
                   "排除", "边界", "不安排", "远距离", "不出现", "不写", "不下",
-                  "禁止", "红线", "结论性"]
+                  "禁止", "红线", "结论性", "不组织", "不演"]
 
 # 未确认外联写成既定事实
 UNCONFIRMED_OUTREACH = [r"已邀请消防站", r"消防站已到场", r"民警已到场",
@@ -73,6 +73,20 @@ PROCESS_MARKER_PATTERNS = [
 # 方案稿中与钟点混用的相对时点提示词
 RELATIVE_TIME_HINTS = ["到点后", "另列时段", "演练后另列"]
 CLOCK_TIME = r"\d{1,2}:\d{2}"
+
+# 防火方案触发响应链：发现—上报—启动通报类要素（缺则警告，不拦稿）
+TRIGGER_CHAIN_HINTS = ["发现", "示警", "上报", "报告总指挥", "启动响应", "启动预案", "宣布启动", "信号直启"]
+FIRE_SIGNS = ["防火", "消防", "灭火", "火情"]
+EVAC_SIGNS = ["撤离", "疏散", "避险"]
+
+# 防震方案避险链：避险动作 / 停止口令类要素（缺则警告，不拦稿）
+EARTHQUAKE_SIGNS = ["防震", "地震", "避险", "震后"]
+SHELTER_HINTS = ["伏地", "遮挡", "手抓牢", "护头", "停止口令", "桌下", "墙角"]
+
+# 防拐边界：不应出现撤离演练与强行带走类模拟
+ABDUCTION_SIGNS = ["防拐", "防走失", "陌生人", "拐骗"]
+ABDUCTION_EVAC_HINTS = ["撤离", "疏散"]
+ABDUCTION_FORCE_HINTS = ["抱走", "拖拽", "强行带走"]
 
 
 def in_negative_context(line, patterns):
@@ -218,6 +232,30 @@ def main():
     if mode == "plan":
         if re.search(CLOCK_TIME, text) and any(h in text for h in RELATIVE_TIME_HINTS):
             warnings.append("流程时段标签混用：同一篇既有钟点又有「到点后 / 另列时段」等相对时点；相对时点请写明对应钟点，或统一为钟点表述")
+
+    # 5c. 防火方案：缺触发响应链（发现—上报—启动通报）提示补齐，不拦稿
+    if mode == "plan" and any(s in text for s in FIRE_SIGNS) and any(s in text for s in EVAC_SIGNS):
+        if not any(h in text for h in TRIGGER_CHAIN_HINTS):
+            warnings.append("防火方案未见触发响应环节（火情发现 → 上报 → 启动通报）；对照 drill-sop 第三节补齐，或注明本场为信号直启演练")
+
+    # 5d. 防震方案：缺避险动作 / 停止口令要素提示补齐，不拦稿
+    if mode == "plan" and any(s in text for s in EARTHQUAKE_SIGNS) and any(s in text for s in EVAC_SIGNS):
+        if not any(h in text for h in SHELTER_HINTS):
+            warnings.append("防震方案未见避险动作环节（就近避险、伏地遮挡手抓牢、停止口令后疏散）；对照 drill-sop 第四节补齐")
+
+    # 5e. 防拐方案：误写撤离演练 / 强行带走模拟，逐行排除否定边界语境
+    if mode == "plan" and any(s in text for s in ABDUCTION_SIGNS):
+        for line in text.splitlines():
+            if in_negative_context(line, ABDUCTION_EVAC_HINTS + ABDUCTION_FORCE_HINTS):
+                continue
+            for h in ABDUCTION_EVAC_HINTS:
+                if h in line:
+                    warnings.append(f"防拐活动一般不组织撤离演练：「{h}」；以班级情景认知与角色扮演为主，对照 drill-sop 第五节")
+                    break
+            for h in ABDUCTION_FORCE_HINTS:
+                if h in line:
+                    warnings.append(f"防拐情景不安排强行带走 / 抱走 / 拖拽模拟：「{h}」；情景保持温和，台词事先审定")
+                    break
 
     # 6. 占位分类：【待填】= 对话必问项未采集（成稿应清零）；【待核实】= 现场/政策项，允许但须归集清单
     if "待填" in text:
