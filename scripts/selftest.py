@@ -335,6 +335,34 @@ def main():
                         r.returncode == 0 and "标签混用" in r.stdout,
                         r.stdout[-200:]))
 
+    # 用例 15：防火方案缺触发响应链（发现—上报—启动通报）→ 给出警告
+    trig_path = os.path.join(tmp, "trigger.md")
+    with open(trig_path, "w", encoding="utf-8") as f:
+        f.write(GOOD.replace("缺员立即上报总指挥", "缺员立即告知总指挥"))
+    r = run([sys.executable, CHECK, trig_path])
+    results.append(case("15 防火触发链缺失被警告提示",
+                        r.returncode == 0 and "触发响应" in r.stdout,
+                        r.stdout[-200:]))
+
+    # 用例 16：防震方案缺避险动作环节（避险 / 伏地 / 护头 / 停止口令等）→ 给出警告
+    eq_path = os.path.join(tmp, "earthquake.md")
+    with open(eq_path, "w", encoding="utf-8") as f:
+        f.write(GOOD.replace("**时间窗口**：安全教育日",
+                             "**时间窗口**：安全教育日\n- 分支：防震避险疏散演练"))
+    r = run([sys.executable, CHECK, eq_path])
+    results.append(case("16 防震避险链缺失被警告提示",
+                        r.returncode == 0 and "避险动作" in r.stdout,
+                        r.stdout[-200:]))
+
+    # 用例 17：防拐方案误写撤离演练 / 强行带走模拟 → 给出边界警告
+    abd_path = os.path.join(tmp, "abduction.md")
+    with open(abd_path, "w", encoding="utf-8") as f:
+        f.write("# 防拐情景教育活动方案\n\n## 一、背景与目标\n\n- 防拐防走失教育，陌生人情景练习。\n\n## 三、活动流程\n\n| 环节 | 动作 |\n|---|---|\n| 撤离演练 | 陌生人把孩子带出门疏散 |\n")
+    r = run([sys.executable, CHECK, abd_path])
+    results.append(case("17 防拐误写撤离被警告提示",
+                        "撤离演练" in r.stdout and "防拐" in r.stdout,
+                        r.stdout[-200:]))
+
     print(f"\n=== {sum(results)}/{len(results)} 用例通过 ===")
     return 0 if all(results) else 1
 
