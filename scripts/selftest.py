@@ -315,6 +315,26 @@ def main():
                         r.returncode == 0 and "年度排期" in r.stdout and "[通过]" in r.stdout,
                         r.stdout[-200:]))
 
+    # 用例 13：正文残留口述等采集过程标记 → 给出警告（不拦稿）
+    marker_path = os.path.join(tmp, "marker.md")
+    with open(marker_path, "w", encoding="utf-8") as f:
+        f.write(GOOD.replace("## 四、分工与物料",
+                             "## 四、分工与物料\n\n- 班级分布（口述）：一层 2 个班。"))
+    r = run([sys.executable, CHECK, marker_path])
+    results.append(case("13 过程标记被警告提示",
+                        r.returncode == 0 and "过程标记" in r.stdout,
+                        r.stdout[-200:]))
+
+    # 用例 14：钟点与「到点后」相对时点混用 → 给出警告
+    mix_path = os.path.join(tmp, "timemix.md")
+    with open(mix_path, "w", encoding="utf-8") as f:
+        f.write(GOOD.replace("| 10—18' | 清点报数 | 清点员 | 与名册核对 |",
+                              "| 9:30 | 清点报数 | 清点员 | 到点后与名册核对 |"))
+    r = run([sys.executable, CHECK, mix_path])
+    results.append(case("14 时段标签混用被警告提示",
+                        r.returncode == 0 and "标签混用" in r.stdout,
+                        r.stdout[-200:]))
+
     print(f"\n=== {sum(results)}/{len(results)} 用例通过 ===")
     return 0 if all(results) else 1
 

@@ -64,6 +64,16 @@ NEGATIVE_HINTS = ["不参与", "不碰", "只观摩", "不操作", "不递", "�
 UNCONFIRMED_OUTREACH = [r"已邀请消防站", r"消防站已到场", r"民警已到场",
                         r"家长已确定参加"]
 
+# 采集过程标记：不应留在成稿正文（口述 / 录音 / 语音转写等来源标注）
+PROCESS_MARKER_PATTERNS = [
+    r"（口述）", r"\(口述\)", r"口述[:：]",
+    r"（语音）", r"\(语音\)", r"（录音）", r"\(录音\)", r"语音转写",
+]
+
+# 方案稿中与钟点混用的相对时点提示词
+RELATIVE_TIME_HINTS = ["到点后", "另列时段", "演练后另列"]
+CLOCK_TIME = r"\d{1,2}:\d{2}"
+
 
 def in_negative_context(line, patterns):
     """行内是否同时含否定/边界语境；边界说明不算违规。"""
@@ -196,6 +206,18 @@ def main():
         m = re.search(pat, text)
         if m:
             warnings.append(f"外联对象未确认不宜写成既定事实：「{m.group(0)}」；联系不上降级为园内活动")
+
+    # 5a. 采集过程标记不入正文
+    for line in text.splitlines():
+        for pat in PROCESS_MARKER_PATTERNS:
+            m = re.search(pat, line)
+            if m:
+                warnings.append(f"采集过程标记不宜留在成稿正文：「{m.group(0)}」；口述 / 录音等来源标注移到文末待核实清单或过程草稿")
+
+    # 5b. 方案稿：钟点与相对时点混用，提示写明对应钟点
+    if mode == "plan":
+        if re.search(CLOCK_TIME, text) and any(h in text for h in RELATIVE_TIME_HINTS):
+            warnings.append("流程时段标签混用：同一篇既有钟点又有「到点后 / 另列时段」等相对时点；相对时点请写明对应钟点，或统一为钟点表述")
 
     # 6. 占位分类：【待填】= 对话必问项未采集（成稿应清零）；【待核实】= 现场/政策项，允许但须归集清单
     if "待填" in text:
