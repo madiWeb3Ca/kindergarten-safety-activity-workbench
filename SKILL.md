@@ -146,7 +146,6 @@ python scripts/check_plan.py 方案稿.html          # md 与 html 都能校验
 - `references/yearly-schedule.md`——年度／学期三防轮换排期参考表、场间衔接规则与台账边界
 - `references/red-lines.md`——通用红线＋三分支专项红线、事实检索规则、能力与隐私边界、占位写法
 - `references/faq.md`——高频问答与反模式：占位口径、外联降级、幼儿边界、总结用途、照片用法、旧稿复用、季度排期、其他主题边界
-- `references/publish-checklist.md`——对外发布前 TRACE 五维过表、剥离表与上架待办
 - `examples/fire-plan-sample.md`——防火综合场示例
 - `examples/fire-drill-sample.md`——防火疏散演练专场示例
 - `examples/fire-education-sample.md`——防火宣教认知专场示例
