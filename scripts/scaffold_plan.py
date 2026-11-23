@@ -120,6 +120,11 @@ def build_plan(branch, title, window, focus):
         tail_extra = "**幼儿不参与明火与器材实操**：灭火器、消火栓操作仅限教职工、安保与志愿力量；幼儿环节为认知、观摩与疏散演练。"
         body = _plan_head(title, window, branch, focus, target)
         body += _plan_tail(branch, tail_extra)
+        # 防火补触发响应行（发现—上报—启动通报），见 drill-sop.md
+        body = body.replace(
+            "| 【待填】 | 主体环节 | 引导员【待填】 | 按分支口径执行（见 references/activity-seeds.md） |",
+            "| 【待填】 | 触发响应：模拟起火点示警 → 报总指挥 → 宣布启动 → 通报各组就位 | 总指挥 / 发现人【待填】 | 情境设定，不点明火；见 references/drill-sop.md |\n| 【待填】 | 主体环节 | 引导员【待填】 | 按分支口径执行（见 references/activity-seeds.md） |"
+        )
         # 防火补成人专项行
         body = body.replace(
             "| 家园宣传 |",
@@ -138,6 +143,13 @@ def build_plan(branch, title, window, focus):
             "| 演练 / 情景 | 见第三节流程 |",
             "| 避险疏散演练 | 就近避险 → 震动停止后护头疏散 → 集合清点小结 |"
         )
+        # 防震补避险疏散链占位行（信号 → 避险 → 保持 → 疏散），见 drill-sop.md
+        body = body.replace(
+            "| 【待填】 | 主体环节 | 引导员【待填】 | 按分支口径执行（见 references/activity-seeds.md） |",
+            "| 【待填】 | 避险信号 | 各班教师 | 就近躲桌下 / 墙角，伏地、遮挡、手抓牢；见 references/drill-sop.md |\n"
+            "| 【待填】 | 保持避险 | 各班教师 | 护头蜷曲保持到停止口令；不奔跑出门、不跳窗 |\n"
+            "| 【待填】 | 震后疏散 | 引导员【待填】 | 停止口令后护头快走，按预定路线到空旷集结点 |"
+        )
         return body
 
     # 防拐
@@ -150,6 +162,17 @@ def build_plan(branch, title, window, focus):
     body = body.replace(
         "| 演练 / 情景 | 见第三节流程 |",
         "| 情景认知 / 角色扮演 | 班级情景游戏、口诀巩固、情绪安抚 |"
+    )
+    # 防拐补情景活动链占位行（导入 → 设置 → 角色扮演 → 巩固安抚），不套撤离流程
+    body = body.replace(
+        "| 【待填】 | 主体环节 | 引导员【待填】 | 按分支口径执行（见 references/activity-seeds.md） |",
+        "| 【待填】 | 认知导入 | 各班教师 | 绘本图卡讲拒绝要点、求助对象与口诀 |\n"
+        "| 【待填】 | 情境设置 | 主持 / 配合教师【待填】 | 讲明是安全游戏；角色就位，情景限定熟悉场地 |\n"
+        "| 【待填】 | 角色扮演 | 各班教师 | 拒绝、呼救、求助三步练习；观察幼儿反应 |"
+    )
+    body = body.replace(
+        "| 【待填】 | 集合 / 小结 | 清点员、总指挥 | 与名册核对，缺员立即上报；只记事实与改进点 |",
+        "| 【待填】 | 口诀巩固与安抚 | 各班教师 | 口诀儿歌、正强化；情绪安抚收尾，不批评犹豫表现 |"
     )
     return body
 
